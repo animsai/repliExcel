@@ -2,7 +2,6 @@
  * Version 1.0
  * Date : 12 mars 2015
  * Classe : IFA-P3B
- * 
  */
 
 using System;
