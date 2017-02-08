@@ -32,6 +32,9 @@
             this.lsbNames = new System.Windows.Forms.ListBox();
             this.lblFileName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbxNotepadFile = new System.Windows.Forms.TextBox();
+            this.btnBrowseNomsEleves = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbxEncoding = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,30 +43,28 @@
             this.tbxAddName = new System.Windows.Forms.TextBox();
             this.btnAddName = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbxExcelFile = new System.Windows.Forms.TextBox();
+            this.btnBrowseExcel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lsbSheets = new System.Windows.Forms.ListBox();
             this.btnCopyExcel = new System.Windows.Forms.Button();
             this.lblFileExcel = new System.Windows.Forms.Label();
-            this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opdFiles = new System.Windows.Forms.OpenFileDialog();
             this.sfdFile = new System.Windows.Forms.SaveFileDialog();
-            this.btnBrowseNomsEleves = new System.Windows.Forms.Button();
-            this.tbxNotepadFile = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnBrowseExcel = new System.Windows.Forms.Button();
-            this.tbxExcelFile = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // lsbNames
             // 
             this.lsbNames.FormattingEnabled = true;
-            this.lsbNames.Location = new System.Drawing.Point(6, 90);
+            this.lsbNames.Location = new System.Drawing.Point(6, 123);
             this.lsbNames.Name = "lsbNames";
             this.lsbNames.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lsbNames.Size = new System.Drawing.Size(228, 173);
@@ -80,6 +81,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.tbxNotepadFile);
             this.groupBox1.Controls.Add(this.btnBrowseNomsEleves);
             this.groupBox1.Controls.Add(this.label4);
@@ -92,17 +95,44 @@
             this.groupBox1.Controls.Add(this.btnAddName);
             this.groupBox1.Controls.Add(this.lsbNames);
             this.groupBox1.Controls.Add(this.lblFileName);
-            this.groupBox1.Location = new System.Drawing.Point(0, 43);
+            this.groupBox1.Location = new System.Drawing.Point(0, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 304);
+            this.groupBox1.Size = new System.Drawing.Size(485, 320);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fichier contenant les noms d\'élève";
             // 
+            // tbxNotepadFile
+            // 
+            this.tbxNotepadFile.Location = new System.Drawing.Point(103, 76);
+            this.tbxNotepadFile.Name = "tbxNotepadFile";
+            this.tbxNotepadFile.Size = new System.Drawing.Size(262, 20);
+            this.tbxNotepadFile.TabIndex = 9;
+            this.tbxNotepadFile.Text = "ajouter des élèves";
+            // 
+            // btnBrowseNomsEleves
+            // 
+            this.btnBrowseNomsEleves.Location = new System.Drawing.Point(371, 76);
+            this.btnBrowseNomsEleves.Name = "btnBrowseNomsEleves";
+            this.btnBrowseNomsEleves.Size = new System.Drawing.Size(105, 23);
+            this.btnBrowseNomsEleves.TabIndex = 8;
+            this.btnBrowseNomsEleves.Text = "ajouter des élèves";
+            this.btnBrowseNomsEleves.UseVisualStyleBackColor = true;
+            this.btnBrowseNomsEleves.Click += new System.EventHandler(this.btnBrowseNomsEleves_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 76);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "ajouter des élèves";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(363, 200);
+            this.label1.Location = new System.Drawing.Point(363, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 7;
@@ -115,7 +145,7 @@
             this.cbxEncoding.Items.AddRange(new object[] {
             "UTF-8",
             "latin1"});
-            this.cbxEncoding.Location = new System.Drawing.Point(404, 219);
+            this.cbxEncoding.Location = new System.Drawing.Point(404, 252);
             this.cbxEncoding.Name = "cbxEncoding";
             this.cbxEncoding.Size = new System.Drawing.Size(72, 21);
             this.cbxEncoding.TabIndex = 6;
@@ -123,7 +153,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 68);
+            this.label2.Location = new System.Drawing.Point(6, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 5;
@@ -132,7 +162,7 @@
             // btnDeleteName
             // 
             this.btnDeleteName.Enabled = false;
-            this.btnDeleteName.Location = new System.Drawing.Point(240, 135);
+            this.btnDeleteName.Location = new System.Drawing.Point(240, 168);
             this.btnDeleteName.Name = "btnDeleteName";
             this.btnDeleteName.Size = new System.Drawing.Size(110, 38);
             this.btnDeleteName.TabIndex = 5;
@@ -143,7 +173,7 @@
             // btnSaveName
             // 
             this.btnSaveName.Enabled = false;
-            this.btnSaveName.Location = new System.Drawing.Point(240, 207);
+            this.btnSaveName.Location = new System.Drawing.Point(240, 240);
             this.btnSaveName.Name = "btnSaveName";
             this.btnSaveName.Size = new System.Drawing.Size(110, 43);
             this.btnSaveName.TabIndex = 4;
@@ -153,7 +183,7 @@
             // 
             // tbxAddName
             // 
-            this.tbxAddName.Location = new System.Drawing.Point(240, 90);
+            this.tbxAddName.Location = new System.Drawing.Point(240, 123);
             this.tbxAddName.Name = "tbxAddName";
             this.tbxAddName.Size = new System.Drawing.Size(125, 20);
             this.tbxAddName.TabIndex = 3;
@@ -162,7 +192,7 @@
             // btnAddName
             // 
             this.btnAddName.Enabled = false;
-            this.btnAddName.Location = new System.Drawing.Point(371, 90);
+            this.btnAddName.Location = new System.Drawing.Point(371, 123);
             this.btnAddName.Name = "btnAddName";
             this.btnAddName.Size = new System.Drawing.Size(105, 23);
             this.btnAddName.TabIndex = 2;
@@ -172,6 +202,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.listBox1);
             this.groupBox2.Controls.Add(this.tbxExcelFile);
             this.groupBox2.Controls.Add(this.btnBrowseExcel);
             this.groupBox2.Controls.Add(this.label3);
@@ -186,6 +219,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fichier excel";
             // 
+            // tbxExcelFile
+            // 
+            this.tbxExcelFile.Location = new System.Drawing.Point(104, 32);
+            this.tbxExcelFile.Name = "tbxExcelFile";
+            this.tbxExcelFile.Size = new System.Drawing.Size(262, 20);
+            this.tbxExcelFile.TabIndex = 9;
+            // 
+            // btnBrowseExcel
+            // 
+            this.btnBrowseExcel.Location = new System.Drawing.Point(372, 30);
+            this.btnBrowseExcel.Name = "btnBrowseExcel";
+            this.btnBrowseExcel.Size = new System.Drawing.Size(90, 23);
+            this.btnBrowseExcel.TabIndex = 8;
+            this.btnBrowseExcel.Text = "Parcourir...";
+            this.btnBrowseExcel.UseVisualStyleBackColor = true;
+            this.btnBrowseExcel.Click += new System.EventHandler(this.btnBrowseExcel_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -195,12 +245,21 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "La feuille à cloner:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Fichier source";
+            // 
             // lsbSheets
             // 
             this.lsbSheets.FormattingEnabled = true;
-            this.lsbSheets.Location = new System.Drawing.Point(104, 68);
+            this.lsbSheets.Location = new System.Drawing.Point(115, 69);
             this.lsbSheets.Name = "lsbSheets";
-            this.lsbSheets.Size = new System.Drawing.Size(262, 82);
+            this.lsbSheets.Size = new System.Drawing.Size(262, 69);
             this.lsbSheets.TabIndex = 3;
             this.lsbSheets.SelectedIndexChanged += new System.EventHandler(this.lsbSheets_SelectedIndexChanged);
             // 
@@ -224,87 +283,52 @@
             this.lblFileExcel.Size = new System.Drawing.Size(0, 13);
             this.lblFileExcel.TabIndex = 1;
             // 
-            // msMenu
-            // 
-            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.msMenu.Location = new System.Drawing.Point(0, 0);
-            this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(959, 24);
-            this.msMenu.TabIndex = 4;
-            this.msMenu.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aProposToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
-            this.toolStripMenuItem1.Text = "?";
-            // 
-            // aProposToolStripMenuItem
-            // 
-            this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.aProposToolStripMenuItem.Text = "A propos";
-            this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
-            // 
             // opdFiles
             // 
             this.opdFiles.FileName = "openFileDialog1";
             // 
-            // btnBrowseNomsEleves
+            // comboBox1
             // 
-            this.btnBrowseNomsEleves.Location = new System.Drawing.Point(371, 39);
-            this.btnBrowseNomsEleves.Name = "btnBrowseNomsEleves";
-            this.btnBrowseNomsEleves.Size = new System.Drawing.Size(105, 23);
-            this.btnBrowseNomsEleves.TabIndex = 8;
-            this.btnBrowseNomsEleves.Text = "Parcourir...";
-            this.btnBrowseNomsEleves.UseVisualStyleBackColor = true;
-            this.btnBrowseNomsEleves.Click += new System.EventHandler(this.btnBrowseNomsEleves_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(205, 39);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(160, 21);
+            this.comboBox1.TabIndex = 10;
             // 
-            // tbxNotepadFile
+            // label6
             // 
-            this.tbxNotepadFile.Location = new System.Drawing.Point(103, 39);
-            this.tbxNotepadFile.Name = "tbxNotepadFile";
-            this.tbxNotepadFile.Size = new System.Drawing.Size(262, 20);
-            this.tbxNotepadFile.TabIndex = 9;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(168, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Selectionner une classe existante ";
             // 
-            // label4
+            // label7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Fichier de noms";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "feuille recapitulative*";
             // 
-            // label5
+            // listBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Fichier source";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(115, 144);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(262, 69);
+            this.listBox1.TabIndex = 10;
             // 
-            // btnBrowseExcel
+            // label8
             // 
-            this.btnBrowseExcel.Location = new System.Drawing.Point(372, 30);
-            this.btnBrowseExcel.Name = "btnBrowseExcel";
-            this.btnBrowseExcel.Size = new System.Drawing.Size(90, 23);
-            this.btnBrowseExcel.TabIndex = 8;
-            this.btnBrowseExcel.Text = "Parcourir...";
-            this.btnBrowseExcel.UseVisualStyleBackColor = true;
-            this.btnBrowseExcel.Click += new System.EventHandler(this.btnBrowseExcel_Click);
-            // 
-            // tbxExcelFile
-            // 
-            this.tbxExcelFile.Location = new System.Drawing.Point(104, 32);
-            this.tbxExcelFile.Name = "tbxExcelFile";
-            this.tbxExcelFile.Size = new System.Drawing.Size(262, 20);
-            this.tbxExcelFile.TabIndex = 9;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 224);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(210, 26);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "* veuilllez remplacer les champs des élèves\r\n par le mot : \"pokemon\" ";
             // 
             // Form1
             // 
@@ -313,10 +337,8 @@
             this.ClientSize = new System.Drawing.Size(959, 359);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.msMenu;
             this.Name = "Form1";
             this.Text = "Replication Excel";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
@@ -325,10 +347,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.msMenu.ResumeLayout(false);
-            this.msMenu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -339,7 +358,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblFileExcel;
-        private System.Windows.Forms.MenuStrip msMenu;
         private System.Windows.Forms.OpenFileDialog opdFiles;
         private System.Windows.Forms.TextBox tbxAddName;
         private System.Windows.Forms.Button btnAddName;
@@ -352,14 +370,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxEncoding;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
         private System.Windows.Forms.TextBox tbxNotepadFile;
         private System.Windows.Forms.Button btnBrowseNomsEleves;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbxExcelFile;
         private System.Windows.Forms.Button btnBrowseExcel;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
