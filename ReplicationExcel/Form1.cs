@@ -87,7 +87,7 @@ namespace ReplicationExcel
         /// <param name="e"></param>
         private void btnSaveName_Click(object sender, EventArgs e)
         {
-            sfdFile.Title = "Fichier texte ou enregistrer les noms";
+            sfdFile.Title = "Fichier texte";
             sfdFile.Filter = "excel files (*.txt)|*.txt|All fils (*.*)|*.*";
             sfdFile.FileName = "Votre fichier d'enregistrement des noms.txt";
             sfdFile.AddExtension = true;
@@ -295,6 +295,7 @@ namespace ReplicationExcel
         private void Form1_Load(object sender, EventArgs e)
         {
             cbxEncoding.SelectedIndex = 0;
+
         }
 
         private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
@@ -362,7 +363,6 @@ namespace ReplicationExcel
             {
                 btnSaveName.Enabled = true;
                 lsbNames.Items.Clear();
-                tbxNotepadFile.Text = this.FileName;
                 if (cbxEncoding.SelectedIndex == 1)
                 {
                     encoding = Encoding.GetEncoding("latin1");

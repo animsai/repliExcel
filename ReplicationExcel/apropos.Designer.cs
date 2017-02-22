@@ -68,9 +68,9 @@
             this.lblVersion.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblVersion.Location = new System.Drawing.Point(330, 67);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(183, 20);
+            this.lblVersion.Size = new System.Drawing.Size(85, 20);
             this.lblVersion.TabIndex = 2;
-            this.lblVersion.Text = "4.2.0 Absolute swaggence";
+            this.lblVersion.Text = "Version 2.0";
             this.lblVersion.Click += new System.EventHandler(this.lblVersion_Click);
             // 
             // lblSynopsis
@@ -101,9 +101,9 @@
             this.lblAuteursList.AutoSize = true;
             this.lblAuteursList.Location = new System.Drawing.Point(330, 180);
             this.lblAuteursList.Name = "lblAuteursList";
-            this.lblAuteursList.Size = new System.Drawing.Size(93, 65);
+            this.lblAuteursList.Size = new System.Drawing.Size(89, 52);
             this.lblAuteursList.TabIndex = 5;
-            this.lblAuteursList.Text = "Angelo Argelli\r\nThomas Bacaicoa\r\nThomas Ehlers\r\nPhillip Geier\r\nLoic Schupbach";
+            this.lblAuteursList.Text = "Jessica Sulzbach\r\nSean Metry\r\nDilan Marques\r\nGabor La Pute";
             // 
             // lblAuteur
             // 
