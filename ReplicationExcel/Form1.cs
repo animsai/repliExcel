@@ -262,6 +262,8 @@ namespace ReplicationExcel
             }
         }
 
+
+
         /// <summary>
         /// Ferme le excelManager lorsque l'application se ferme pour qu'il n'y ait pas de problème de chargement
         /// </summary>
