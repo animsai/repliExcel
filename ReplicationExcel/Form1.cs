@@ -46,6 +46,15 @@ namespace ReplicationExcel
             set { _fileExcel = value; }
         }
 
+        private string _fileSmog = "";
+
+        public string FileSmog
+        {
+            get { return _fileSmog; }
+            set { _fileSmog = value; }
+        }
+
+
         private string _fileSaveName = "";
         public string FileSaveName
         {
@@ -203,7 +212,7 @@ namespace ReplicationExcel
         private void btnCopyExcel_Click(object sender, EventArgs e)
         {
             List<string> listName = new List<string>();
-
+            
             for(int i = 0; i < lsbNames.Items.Count;i++)
             {
                 listName.Add(lsbNames.Items[i].ToString());
@@ -362,6 +371,42 @@ namespace ReplicationExcel
                 for (int i = 0; i < items.Count; i++)
                 {
                     lsbNames.Items.Add(items[i]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Votre nom de fichier n'est pas accepté. Mauvaise extension ou pas de nom", "Fichier éronné");
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnaddsmog_Click(object sender, EventArgs e)
+        {
+            opdfileSmog.Title = "Charger le fichier excel qui contient le template";
+
+            opdfileSmog.Filter = "excel files (*.xlsx)|*.xlsx|All fils (*.*)|*.*";
+            opdfileSmog.FileName = "Votre fichier.xlxs";
+            opdfileSmog.AddExtension = true;
+            opdfileSmog.DefaultExt = "xlxs";
+            opdfileSmog.FilterIndex = 1;
+            opdfileSmog.ShowDialog();
+            this.FileExcel = opdfileSmog.FileName;
+            string[] tableauSeparationPoint = this.FileExcel.Split('.');
+            string ext = tableauSeparationPoint[tableauSeparationPoint.Count() - 1].Trim();
+            if (this.FileExcel != "Votre fichier.xlxs" && this.FileExcel != "" && ext == "xlsx")
+            {
+                tbxExcelFile.Text = this.FileExcel;
+                excelManager = new ExcelSheetReplicator();
+                excelManager.Initialize(this.FileExcel);
+                string[] sheetsList = excelManager.GetSheetList();
+
+                foreach (string sheet in sheetsList)
+                {
+                    lsbSheets.Items.Add(sheet);
                 }
             }
             else

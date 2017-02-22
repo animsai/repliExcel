@@ -32,6 +32,8 @@
             this.lsbNames = new System.Windows.Forms.ListBox();
             this.lblFileName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tbxNotepadFile = new System.Windows.Forms.TextBox();
             this.btnBrowseNomsEleves = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +45,9 @@
             this.tbxAddName = new System.Windows.Forms.TextBox();
             this.btnAddName = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tbxExcelFile = new System.Windows.Forms.TextBox();
             this.btnBrowseExcel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,11 +57,8 @@
             this.lblFileExcel = new System.Windows.Forms.Label();
             this.opdFiles = new System.Windows.Forms.OpenFileDialog();
             this.sfdFile = new System.Windows.Forms.SaveFileDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.opdfileSmog = new System.Windows.Forms.OpenFileDialog();
+            this.btnaddsmog = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,7 @@
             // lsbNames
             // 
             this.lsbNames.FormattingEnabled = true;
-            this.lsbNames.Location = new System.Drawing.Point(6, 123);
+            this.lsbNames.Location = new System.Drawing.Point(6, 141);
             this.lsbNames.Name = "lsbNames";
             this.lsbNames.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.lsbNames.Size = new System.Drawing.Size(228, 173);
@@ -81,6 +83,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnaddsmog);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.tbxNotepadFile);
@@ -95,16 +98,34 @@
             this.groupBox1.Controls.Add(this.btnAddName);
             this.groupBox1.Controls.Add(this.lsbNames);
             this.groupBox1.Controls.Add(this.lblFileName);
-            this.groupBox1.Location = new System.Drawing.Point(0, 27);
+            this.groupBox1.Location = new System.Drawing.Point(0, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 320);
+            this.groupBox1.Size = new System.Drawing.Size(485, 335);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fichier contenant les noms d\'élève";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(168, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Selectionner une classe existante ";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(205, 26);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(145, 21);
+            this.comboBox1.TabIndex = 10;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // tbxNotepadFile
             // 
-            this.tbxNotepadFile.Location = new System.Drawing.Point(103, 76);
+            this.tbxNotepadFile.Location = new System.Drawing.Point(103, 94);
             this.tbxNotepadFile.Name = "tbxNotepadFile";
             this.tbxNotepadFile.Size = new System.Drawing.Size(262, 20);
             this.tbxNotepadFile.TabIndex = 9;
@@ -112,7 +133,7 @@
             // 
             // btnBrowseNomsEleves
             // 
-            this.btnBrowseNomsEleves.Location = new System.Drawing.Point(371, 76);
+            this.btnBrowseNomsEleves.Location = new System.Drawing.Point(371, 94);
             this.btnBrowseNomsEleves.Name = "btnBrowseNomsEleves";
             this.btnBrowseNomsEleves.Size = new System.Drawing.Size(105, 23);
             this.btnBrowseNomsEleves.TabIndex = 8;
@@ -123,7 +144,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 76);
+            this.label4.Location = new System.Drawing.Point(6, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 7;
@@ -132,7 +153,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(363, 233);
+            this.label1.Location = new System.Drawing.Point(363, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 13);
             this.label1.TabIndex = 7;
@@ -145,7 +166,7 @@
             this.cbxEncoding.Items.AddRange(new object[] {
             "UTF-8",
             "latin1"});
-            this.cbxEncoding.Location = new System.Drawing.Point(404, 252);
+            this.cbxEncoding.Location = new System.Drawing.Point(404, 270);
             this.cbxEncoding.Name = "cbxEncoding";
             this.cbxEncoding.Size = new System.Drawing.Size(72, 21);
             this.cbxEncoding.TabIndex = 6;
@@ -162,7 +183,7 @@
             // btnDeleteName
             // 
             this.btnDeleteName.Enabled = false;
-            this.btnDeleteName.Location = new System.Drawing.Point(240, 168);
+            this.btnDeleteName.Location = new System.Drawing.Point(240, 186);
             this.btnDeleteName.Name = "btnDeleteName";
             this.btnDeleteName.Size = new System.Drawing.Size(110, 38);
             this.btnDeleteName.TabIndex = 5;
@@ -173,7 +194,7 @@
             // btnSaveName
             // 
             this.btnSaveName.Enabled = false;
-            this.btnSaveName.Location = new System.Drawing.Point(240, 240);
+            this.btnSaveName.Location = new System.Drawing.Point(240, 258);
             this.btnSaveName.Name = "btnSaveName";
             this.btnSaveName.Size = new System.Drawing.Size(110, 43);
             this.btnSaveName.TabIndex = 4;
@@ -183,7 +204,7 @@
             // 
             // tbxAddName
             // 
-            this.tbxAddName.Location = new System.Drawing.Point(240, 123);
+            this.tbxAddName.Location = new System.Drawing.Point(240, 141);
             this.tbxAddName.Name = "tbxAddName";
             this.tbxAddName.Size = new System.Drawing.Size(125, 20);
             this.tbxAddName.TabIndex = 3;
@@ -192,7 +213,7 @@
             // btnAddName
             // 
             this.btnAddName.Enabled = false;
-            this.btnAddName.Location = new System.Drawing.Point(371, 123);
+            this.btnAddName.Location = new System.Drawing.Point(371, 141);
             this.btnAddName.Name = "btnAddName";
             this.btnAddName.Size = new System.Drawing.Size(105, 23);
             this.btnAddName.TabIndex = 2;
@@ -218,6 +239,32 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fichier excel";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 224);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(210, 26);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "* veuilllez remplacer les champs des élèves\r\n par le mot : \"pokemon\" ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 152);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(104, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "feuille recapitulative*";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(115, 144);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(262, 69);
+            this.listBox1.TabIndex = 10;
             // 
             // tbxExcelFile
             // 
@@ -287,48 +334,19 @@
             // 
             this.opdFiles.FileName = "openFileDialog1";
             // 
-            // comboBox1
+            // opdfileSmog
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 39);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 21);
-            this.comboBox1.TabIndex = 10;
+            this.opdfileSmog.FileName = "openFileDialog1";
             // 
-            // label6
+            // btnaddsmog
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(168, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Selectionner une classe existante ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 152);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "feuille recapitulative*";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(115, 144);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(262, 69);
-            this.listBox1.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 224);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(210, 26);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "* veuilllez remplacer les champs des élèves\r\n par le mot : \"pokemon\" ";
+            this.btnaddsmog.Location = new System.Drawing.Point(205, 52);
+            this.btnaddsmog.Name = "btnaddsmog";
+            this.btnaddsmog.Size = new System.Drawing.Size(160, 23);
+            this.btnaddsmog.TabIndex = 12;
+            this.btnaddsmog.Text = "Ajouter une classe ...";
+            this.btnaddsmog.UseVisualStyleBackColor = true;
+            this.btnaddsmog.Click += new System.EventHandler(this.btnaddsmog_Click);
             // 
             // Form1
             // 
@@ -381,6 +399,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.OpenFileDialog opdfileSmog;
+        private System.Windows.Forms.Button btnaddsmog;
     }
 }
 
