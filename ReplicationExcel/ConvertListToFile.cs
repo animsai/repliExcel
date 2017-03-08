@@ -33,7 +33,15 @@ namespace ReplicationExcel
             }
             file.Close();
             return lines;
-        }
+        }/// <summary>
+        /// Cette fonction permet d'enregistrer un fichier
+        /// </summary>
+        /// <param name="URL">Url basique, Peut demander le FileSaveName de OpenFile</param>
+        /// <param name="items"></param>
+        /// <param name="encoding"> 
+        ///     Objet qui contient le type d'encodage du fichier 
+        ///         Exemple : Encoding encode = Encoding.UTF8;  || Encoding encode = Encoding.GetEncoding("latin1");
+        /// </param>
         public void ExportToFile(string URL, List<string> items, Encoding encoding)
         {
             List<string> lines = items;

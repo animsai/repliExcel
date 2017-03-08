@@ -25,21 +25,29 @@ namespace ReplicationExcel
 {
     public partial class Form1 : Form
     {
+        #region Constructor
         public Form1()
         {
             InitializeComponent();
         }
+        #endregion
+        #region Variable
         public ConvertListToFile converter = new ConvertListToFile();
         public ExcelSheetReplicator excelManager = null;
 
         private string _fileName = "";
+        private string _fileExcel = "";
+        private string _fileSaveName = "";
+        #endregion
+
+        #region Proprerty
         public string FileName
         {
             get { return _fileName; }
             set { _fileName = value; }
         }
 
-        private string _fileExcel = "";
+
         public string FileExcel
         {
             get { return _fileExcel; }
@@ -55,13 +63,12 @@ namespace ReplicationExcel
         }
 
 
-        private string _fileSaveName = "";
         public string FileSaveName
         {
             get { return _fileSaveName; }
             set { _fileSaveName = value; }
         }
-
+        #endregion
        
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -124,7 +131,7 @@ namespace ReplicationExcel
         /// <summary>
         /// Ajoute le contenu de la textBox élève dans la liste des élèves
         /// Verifie si le nom est déjà dans la textBox
-        /// Ne rajoute le nom que si iln'y est pas déjà
+        /// Ne rajoute le nom que s'il n'y est pas déjà
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
