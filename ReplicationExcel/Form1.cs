@@ -64,7 +64,6 @@ namespace ReplicationExcel
         }
 
 
-        private string _fileSaveName = "";
         public string FileSaveName
         {
             get { return _fileSaveName; }
