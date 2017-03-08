@@ -71,7 +71,6 @@ namespace ReplicationExcel
         }
         #endregion
 
-
        
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -136,7 +135,7 @@ namespace ReplicationExcel
         /// <summary>
         /// Ajoute le contenu de la textBox élève dans la liste des élèves
         /// Verifie si le nom est déjà dans la textBox
-        /// Ne rajoute le nom que si iln'y est pas déjà
+        /// Ne rajoute le nom que s'il n'y est pas déjà
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

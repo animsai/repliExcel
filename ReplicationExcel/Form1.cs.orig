@@ -31,10 +31,14 @@ namespace ReplicationExcel
             InitializeComponent();
         }
         #endregion
+<<<<<<< HEAD
 
+=======
+>>>>>>> gabor
         #region Variable
         public ConvertListToFile converter = new ConvertListToFile();
         public ExcelSheetReplicator excelManager = null;
+
         private string _fileName = "";
         private string _fileExcel = "";
         private string _fileSaveName = "";
@@ -54,7 +58,6 @@ namespace ReplicationExcel
             set { _fileExcel = value; }
         }
 
-<<<<<<< HEAD
         private string _fileSmog = "";
 
         public string FileSmog
@@ -64,16 +67,32 @@ namespace ReplicationExcel
         }
 
 
-        private string _fileSaveName = "";
-=======
-
->>>>>>> ajout de com.
         public string FileSaveName
         {
             get { return _fileSaveName; }
             set { _fileSaveName = value; }
         }
         #endregion
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> gabor
+       
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmNames_Click(object sender, EventArgs e)
+        {
+           
+        }
+     
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void tsmExcel_Click(object sender, EventArgs e)
+        {
+
+           
+        }
 
         /// <summary>
         /// Ouvre une boite de dialogue pour pouvoir séléctionner un nom de fichier, ou un fichier déjà existant pour enregister les noms
@@ -123,7 +142,7 @@ namespace ReplicationExcel
         /// <summary>
         /// Ajoute le contenu de la textBox élève dans la liste des élèves
         /// Verifie si le nom est déjà dans la textBox
-        /// Ne rajoute le nom que si iln'y est pas déjà
+        /// Ne rajoute le nom que s'il n'y est pas déjà
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -211,13 +230,8 @@ namespace ReplicationExcel
         private void btnCopyExcel_Click(object sender, EventArgs e)
         {
             List<string> listName = new List<string>();
-<<<<<<< HEAD
             
-            for(int i = 0; i < lsbNames.Items.Count;i++)
-=======
-
             for (int i = 0; i < lsbNames.Items.Count; i++)
->>>>>>> ajout de com.
             {
                 listName.Add(lsbNames.Items[i].ToString());
             }
@@ -367,6 +381,7 @@ namespace ReplicationExcel
             {
                 btnSaveName.Enabled = true;
                 lsbNames.Items.Clear();
+                tbxNotepadFile.Text = this.FileName;
                 if (cbxEncoding.SelectedIndex == 1)
                 {
                     encoding = Encoding.GetEncoding("latin1");
