@@ -339,6 +339,7 @@ namespace ReplicationExcel
                 foreach (string sheet in sheetsList)
                 {
                     lsbSheets.Items.Add(sheet);
+                    lsbSheets2.Items.Add(sheet);
                 }
             }
             else
@@ -388,11 +389,12 @@ namespace ReplicationExcel
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // accueil le nom de toutes les classes 
         }
 
         private void btnaddsmog_Click(object sender, EventArgs e)
         {
+            // crée par gabor, pour ajouter fichier excel recupéré sur smog 
             opdfileSmog.Title = "Charger le fichier excel qui contient le template";
 
             opdfileSmog.Filter = "excel files (*.xlsx)|*.xlsx|All fils (*.*)|*.*";
@@ -407,18 +409,25 @@ namespace ReplicationExcel
             if (this.FileExcel != "Votre fichier.xlxs" && this.FileExcel != "" && ext == "xlsx")
             {
                 tbxExcelFile.Text = this.FileExcel;
-                excelManager = new ExcelSheetReplicator();
-                excelManager.Initialize(this.FileExcel);
-                string[] sheetsList = excelManager.GetSheetList();
+                
 
-                foreach (string sheet in sheetsList)
-                {
-                    lsbSheets.Items.Add(sheet);
-                }
+                
             }
             else
             {
                 MessageBox.Show("Votre nom de fichier n'est pas accepté. Mauvaise extension ou pas de nom", "Fichier éronné");
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsbSheets2.SelectedIndex == -1)
+            {
+                btnCopyExcel.Enabled = false;
+            }
+            else
+            {
+                btnCopyExcel.Enabled = true;
             }
         }
     }

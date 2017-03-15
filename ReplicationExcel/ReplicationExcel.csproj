@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RENameReplacer.cs" />
     <EmbeddedResource Include="apropos.resx">
       <DependentUpon>apropos.cs</DependentUpon>
     </EmbeddedResource>

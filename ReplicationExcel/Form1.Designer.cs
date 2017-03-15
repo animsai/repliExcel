@@ -32,6 +32,7 @@
             this.lsbNames = new System.Windows.Forms.ListBox();
             this.lblFileName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnaddsmog = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tbxNotepadFile = new System.Windows.Forms.TextBox();
@@ -47,7 +48,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lsbSheets2 = new System.Windows.Forms.ListBox();
             this.tbxExcelFile = new System.Windows.Forms.TextBox();
             this.btnBrowseExcel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.opdFiles = new System.Windows.Forms.OpenFileDialog();
             this.sfdFile = new System.Windows.Forms.SaveFileDialog();
             this.opdfileSmog = new System.Windows.Forms.OpenFileDialog();
-            this.btnaddsmog = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +104,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fichier contenant les noms d\'élève";
+            // 
+            // btnaddsmog
+            // 
+            this.btnaddsmog.Location = new System.Drawing.Point(205, 52);
+            this.btnaddsmog.Name = "btnaddsmog";
+            this.btnaddsmog.Size = new System.Drawing.Size(160, 23);
+            this.btnaddsmog.TabIndex = 12;
+            this.btnaddsmog.Text = "Ajouter une classe ...";
+            this.btnaddsmog.UseVisualStyleBackColor = true;
+            this.btnaddsmog.Click += new System.EventHandler(this.btnaddsmog_Click);
             // 
             // label6
             // 
@@ -225,7 +235,7 @@
             // 
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.listBox1);
+            this.groupBox2.Controls.Add(this.lsbSheets2);
             this.groupBox2.Controls.Add(this.tbxExcelFile);
             this.groupBox2.Controls.Add(this.btnBrowseExcel);
             this.groupBox2.Controls.Add(this.label3);
@@ -258,13 +268,14 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "feuille recapitulative*";
             // 
-            // listBox1
+            // lsbSheets2
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(115, 144);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(262, 69);
-            this.listBox1.TabIndex = 10;
+            this.lsbSheets2.FormattingEnabled = true;
+            this.lsbSheets2.Location = new System.Drawing.Point(115, 144);
+            this.lsbSheets2.Name = "lsbSheets2";
+            this.lsbSheets2.Size = new System.Drawing.Size(262, 69);
+            this.lsbSheets2.TabIndex = 10;
+            this.lsbSheets2.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // tbxExcelFile
             // 
@@ -338,16 +349,6 @@
             // 
             this.opdfileSmog.FileName = "openFileDialog1";
             // 
-            // btnaddsmog
-            // 
-            this.btnaddsmog.Location = new System.Drawing.Point(205, 52);
-            this.btnaddsmog.Name = "btnaddsmog";
-            this.btnaddsmog.Size = new System.Drawing.Size(160, 23);
-            this.btnaddsmog.TabIndex = 12;
-            this.btnaddsmog.Text = "Ajouter une classe ...";
-            this.btnaddsmog.UseVisualStyleBackColor = true;
-            this.btnaddsmog.Click += new System.EventHandler(this.btnaddsmog_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,7 +399,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lsbSheets2;
         private System.Windows.Forms.OpenFileDialog opdfileSmog;
         private System.Windows.Forms.Button btnaddsmog;
     }
