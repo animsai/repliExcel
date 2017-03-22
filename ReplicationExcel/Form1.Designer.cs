@@ -98,18 +98,18 @@
             this.groupBox1.Controls.Add(this.btnAddName);
             this.groupBox1.Controls.Add(this.lsbNames);
             this.groupBox1.Controls.Add(this.lblFileName);
-            this.groupBox1.Location = new System.Drawing.Point(0, 12);
+            this.groupBox1.Location = new System.Drawing.Point(2, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(485, 335);
+            this.groupBox1.Size = new System.Drawing.Size(483, 335);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fichier contenant les noms d\'élève";
             // 
             // btnaddsmog
             // 
-            this.btnaddsmog.Location = new System.Drawing.Point(205, 52);
+            this.btnaddsmog.Location = new System.Drawing.Point(331, 24);
             this.btnaddsmog.Name = "btnaddsmog";
-            this.btnaddsmog.Size = new System.Drawing.Size(160, 23);
+            this.btnaddsmog.Size = new System.Drawing.Size(145, 23);
             this.btnaddsmog.TabIndex = 12;
             this.btnaddsmog.Text = "Ajouter une classe ...";
             this.btnaddsmog.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 26);
+            this.comboBox1.Location = new System.Drawing.Point(180, 24);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(145, 21);
             this.comboBox1.TabIndex = 10;
@@ -139,7 +139,6 @@
             this.tbxNotepadFile.Name = "tbxNotepadFile";
             this.tbxNotepadFile.Size = new System.Drawing.Size(262, 20);
             this.tbxNotepadFile.TabIndex = 9;
-            this.tbxNotepadFile.Text = "ajouter des élèves";
             // 
             // btnBrowseNomsEleves
             // 
@@ -156,9 +155,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.Size = new System.Drawing.Size(94, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "ajouter des élèves";
+            this.label4.Text = "Ajouter des élèves";
             // 
             // label1
             // 
@@ -184,7 +183,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 101);
+            this.label2.Location = new System.Drawing.Point(237, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 5;
@@ -243,9 +242,9 @@
             this.groupBox2.Controls.Add(this.lsbSheets);
             this.groupBox2.Controls.Add(this.btnCopyExcel);
             this.groupBox2.Controls.Add(this.lblFileExcel);
-            this.groupBox2.Location = new System.Drawing.Point(491, 43);
+            this.groupBox2.Location = new System.Drawing.Point(491, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(468, 304);
+            this.groupBox2.Size = new System.Drawing.Size(463, 335);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fichier excel";
