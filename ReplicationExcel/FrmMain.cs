@@ -23,10 +23,10 @@ using System.IO;
 
 namespace ReplicationExcel
 {
-    public partial class Form1 : Form
+    public partial class FrmMain : Form
     {
         #region Constructor
-        public Form1()
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -69,19 +69,19 @@ namespace ReplicationExcel
             set { _fileSaveName = value; }
         }
         #endregion
-       
+
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void tsmNames_Click(object sender, EventArgs e)
         {
-           
+
         }
-     
+
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void tsmExcel_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace ReplicationExcel
             string ext = tableauSeparationPoint[tableauSeparationPoint.Count() - 1].Trim();
             if (this.FileSaveName != "Votre fichier d'enregistrement des noms.txt" && this.FileSaveName != "" && ext == "txt")
             {
-                if(File.Exists(this.FileSaveName))
+                if (File.Exists(this.FileSaveName))
                 {
                     File.Delete(this.FileSaveName);
                 }
@@ -136,7 +136,7 @@ namespace ReplicationExcel
         /// <param name="e"></param>
         private void btnAddName_Click(object sender, EventArgs e)
         {
-            if(tbxAddName.Text != "")
+            if (tbxAddName.Text != "")
             {
                 bool ajoutEleve = true;
 
@@ -147,7 +147,7 @@ namespace ReplicationExcel
                         ajoutEleve = false;
                         break;
                     }
-                    }
+                }
                 if (ajoutEleve)
                 {
                     lsbNames.Items.Add(tbxAddName.Text);
@@ -156,7 +156,7 @@ namespace ReplicationExcel
                 {
                     MessageBox.Show("Cet élève est déjà dans la liste", "Double élève");
                 }
-                
+
                 tbxAddName.Clear();
             }
         }
@@ -167,7 +167,7 @@ namespace ReplicationExcel
         /// <param name="e"></param>
         private void tbxAddName_TextChanged(object sender, EventArgs e)
         {
-            if(tbxAddName.Text == "")
+            if (tbxAddName.Text == "")
             {
                 btnAddName.Enabled = false;
             }
@@ -199,7 +199,7 @@ namespace ReplicationExcel
         /// <param name="e"></param>
         private void lsbNames_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lsbNames.SelectedIndex == -1)
+            if (lsbNames.SelectedIndex == -1)
             {
                 btnDeleteName.Enabled = false;
             }
@@ -218,24 +218,24 @@ namespace ReplicationExcel
         private void btnCopyExcel_Click(object sender, EventArgs e)
         {
             List<string> listName = new List<string>();
-            
-            for(int i = 0; i < lsbNames.Items.Count;i++)
+
+            for (int i = 0; i < lsbNames.Items.Count; i++)
             {
                 listName.Add(lsbNames.Items[i].ToString());
             }
 
             bool problemNameOK = true; ;
-            if(listName.Count == 0)
+            if (listName.Count == 0)
             {
                 DialogResult message = MessageBox.Show("Il n'y a pas de nom a copier pour créer les feuilles. Si vous voulez continuer (le fichier sera créer avec seulement le template), cliquez sur suivant", "Pas de noms", MessageBoxButtons.OKCancel);
-                if(message == DialogResult.Cancel)
+                if (message == DialogResult.Cancel)
                 {
                     problemNameOK = false;
                 }
             }
             if (problemNameOK)
             {
-                
+
 
                 sfdFile.Title = "Enregistrer le fichier modifié";
                 sfdFile.Filter = "excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
@@ -249,7 +249,7 @@ namespace ReplicationExcel
                 string ext = tableauSeparationPoint[tableauSeparationPoint.Count() - 1].Trim();
                 if (fileSave != "" && fileSave != "Votre fichier d'enregistrement des feuilles excel modifiée.xlsx" && ext == "xlsx")
                 {
-                    if(File.Exists(fileSave))
+                    if (File.Exists(fileSave))
                     {
                         File.Delete(fileSave);
                     }
@@ -273,7 +273,7 @@ namespace ReplicationExcel
         /// <param name="e"></param>
         private void lsbSheets_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lsbSheets.SelectedIndex == -1)
+            if (lsbSheets.SelectedIndex == -1)
             {
                 btnCopyExcel.Enabled = false;
             }
@@ -355,8 +355,8 @@ namespace ReplicationExcel
         private void btnBrowseNomsEleves_Click(object sender, EventArgs e)
         {
             opdFiles.Title = "Charger le fichier texte de nom des élèves";
-            opdFiles.Filter = "txt files (*.txt)|*.txt|All fils (*.*)|*.*";
-            opdFiles.FileName = "Votre fichier.txt";
+            opdFiles.Filter = "fiche Excel (*.xlsx)|*.xlsx|txt files (*.txt)|*.txt|All fils (*.*)|*.*";
+            opdFiles.FileName = "Nom de la liste ";
             opdFiles.AddExtension = true;
             opdFiles.DefaultExt = "txt";
             opdFiles.FilterIndex = 1;
@@ -365,6 +365,8 @@ namespace ReplicationExcel
             this.FileName = opdFiles.FileName;
             string[] tableauSeparationPoint = this.FileName.Split('.');
             string ext = tableauSeparationPoint[tableauSeparationPoint.Count() - 1].Trim();
+
+            #region Fichier TXT
             if (this.FileName != "Votre fichier.txt" && this.FileName != "" && ext == "txt")
             {
                 btnSaveName.Enabled = true;
@@ -379,6 +381,41 @@ namespace ReplicationExcel
                 {
                     lsbNames.Items.Add(items[i]);
                 }
+            }
+            #endregion
+
+
+            // pas encore fonctionnel 
+            // donner rentrer enbrute en Student
+            else if (this.FileName != "*.xlsx" && this.FileName != "" && ext == "xlsx")
+            {
+                btnSaveName.Enabled = true;
+                lsbNames.Items.Clear();
+                tbxNotepadFile.Text = this.FileName;
+
+                ExcelMapper mapper = new ExcelMapper();
+                Student std1 = new Student();
+
+                std1.Name = new List<string>();
+                std1.Family =new List<string>();
+                std1.Numbers = new List<string>();
+
+                using (ExcelManager em = new ExcelManager())
+                {
+                    em.Open(this.FileName);
+                    em.ActivateSheet("ElevesCoursExcel");
+                    mapper.Read2(std1, this.FileName);
+
+                    for (int i = 0; i < std1.Numbers.LongCount(); i++)
+                    {
+                        lsbNames.Items.Add(std1.Name[i] +" "+ std1.Family[i]);
+
+                    }
+
+                }
+
+
+
             }
             else
             {
@@ -408,9 +445,9 @@ namespace ReplicationExcel
             if (this.FileExcel != "Votre fichier.xlxs" && this.FileExcel != "" && ext == "xlsx")
             {
                 tbxExcelFile.Text = this.FileExcel;
-                
 
-                
+
+
             }
             else
             {
