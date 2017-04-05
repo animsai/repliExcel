@@ -29,6 +29,41 @@ namespace ReplicationExcel
             WorkBook = ExcelApplication.Workbooks.Open(ClasseurPath);
             Sheet = recapitulatif; 
         }
+        // fonction sert a remplacer les pokemons par la liste des noms d'eleves 
+        public void raplacespokemons(List<string> names)
+        {
+            Excel.Range currentFind = null;
+            Excel.Range firstFind = null;
+
+
+            Excel.Range places = Sheet.get_Range("A1","T100");
+
+            currentFind = places.Find("pokemon", "B2", Excel.XlFindLookIn.xlValues);
+
+
+            while (currentFind != null)
+            {
+                // Keep track of the first range you find. 
+                if (firstFind == null)
+                {
+                    firstFind = currentFind;
+                }
+
+                // If you didn't move to a new range, you are done.
+                else if (currentFind.get_Address(Excel.XlReferenceStyle.xlA1)
+                      == firstFind.get_Address(Excel.XlReferenceStyle.xlA1))
+                {
+                    break;
+                }
+
+                currentFind.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Red);
+                currentFind.Font.Bold = true;
+
+                currentFind = places.FindNext(currentFind);
+            }
+
+
+        }
 
     }
 }
