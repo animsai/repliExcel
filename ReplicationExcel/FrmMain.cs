@@ -127,6 +127,7 @@ namespace ReplicationExcel
                 MessageBox.Show("Votre nom de fichier n'est pas accepté. Mauvaise extension ou pas de nom", "Fichier éronné");
             }
         }
+
         /// <summary>
         /// Ajoute le contenu de la textBox élève dans la liste des élèves
         /// Verifie si le nom est déjà dans la textBox
@@ -148,6 +149,7 @@ namespace ReplicationExcel
                         break;
                     }
                 }
+
                 if (ajoutEleve)
                 {
                     lsbNames.Items.Add(tbxAddName.Text);
@@ -160,6 +162,7 @@ namespace ReplicationExcel
                 tbxAddName.Clear();
             }
         }
+
         /// <summary>
         /// Disable le bouton d'ajout de nom lorsque rien n'est écrit dans la textBox "nom"
         /// </summary>
@@ -192,6 +195,7 @@ namespace ReplicationExcel
                 lsbNames.Items.Remove(selections[0]);
             }
         }
+
         /// <summary>
         /// Désactive le bouton de suppression des noms lorsque que aucun élève n'est séléctionner dans la listBox "nom"
         /// </summary>
@@ -208,6 +212,7 @@ namespace ReplicationExcel
                 btnDeleteName.Enabled = true;
             }
         }
+
         /// <summary>
         /// Ouvre une boite de dialogue pour pouvoir choisir un nom de fichier pour enregistrer le fichier excel final
         /// Verifie si le fichier excel est bon (nom, extension, etc)
@@ -224,7 +229,8 @@ namespace ReplicationExcel
                 listName.Add(lsbNames.Items[i].ToString());
             }
 
-            bool problemNameOK = true; ;
+            bool problemNameOK = true;
+
             if (listName.Count == 0)
             {
                 DialogResult message = MessageBox.Show("Il n'y a pas de nom a copier pour créer les feuilles. Si vous voulez continuer (le fichier sera créer avec seulement le template), cliquez sur suivant", "Pas de noms", MessageBoxButtons.OKCancel);
@@ -233,10 +239,9 @@ namespace ReplicationExcel
                     problemNameOK = false;
                 }
             }
+
             if (problemNameOK)
             {
-
-
                 sfdFile.Title = "Enregistrer le fichier modifié";
                 sfdFile.Filter = "excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
                 sfdFile.FileName = "Votre fichier d'enregistrement des feuilles excel modifiée.xlsx";
@@ -247,12 +252,14 @@ namespace ReplicationExcel
                 string fileSave = sfdFile.FileName;
                 string[] tableauSeparationPoint = fileSave.Split('.');
                 string ext = tableauSeparationPoint[tableauSeparationPoint.Count() - 1].Trim();
+
                 if (fileSave != "" && fileSave != "Votre fichier d'enregistrement des feuilles excel modifiée.xlsx" && ext == "xlsx")
                 {
                     if (File.Exists(fileSave))
                     {
                         File.Delete(fileSave);
                     }
+
                     excelManager.GenerateCopies(lsbSheets.SelectedIndex, listName);
                     excelManager.SaveAs(fileSave);
 
@@ -282,8 +289,6 @@ namespace ReplicationExcel
                 btnCopyExcel.Enabled = true;
             }
         }
-
-
 
         /// <summary>
         /// Ferme le excelManager lorsque l'application se ferme pour qu'il n'y ait pas de problème de chargement
@@ -372,11 +377,14 @@ namespace ReplicationExcel
                 btnSaveName.Enabled = true;
                 lsbNames.Items.Clear();
                 tbxNotepadFile.Text = this.FileName;
+
                 if (cbxEncoding.SelectedIndex == 1)
                 {
                     encoding = Encoding.GetEncoding("latin1");
                 }
+
                 List<string> items = converter.ExtractFromFile(this.FileName, encoding);
+
                 for (int i = 0; i < items.Count; i++)
                 {
                     lsbNames.Items.Add(items[i]);
@@ -430,9 +438,8 @@ namespace ReplicationExcel
 
         private void btnaddsmog_Click(object sender, EventArgs e)
         {
-            // crée par gabor, pour ajouter fichier excel recupéré sur smog 
+            // pour ajouter fichier excel recupéré sur smog 
             opdfileSmog.Title = "Charger le fichier excel qui contient le template";
-
             opdfileSmog.Filter = "excel files (*.xlsx)|*.xlsx|All fils (*.*)|*.*";
             opdfileSmog.FileName = "Votre fichier.xlxs";
             opdfileSmog.AddExtension = true;
@@ -442,12 +449,12 @@ namespace ReplicationExcel
             this.FileExcel = opdfileSmog.FileName;
             string[] tableauSeparationPoint = this.FileExcel.Split('.');
             string ext = tableauSeparationPoint[tableauSeparationPoint.Count() - 1].Trim();
+
             if (this.FileExcel != "Votre fichier.xlxs" && this.FileExcel != "" && ext == "xlsx")
             {
                 tbxExcelFile.Text = this.FileExcel;
-
-
-
+                
+                
             }
             else
             {
