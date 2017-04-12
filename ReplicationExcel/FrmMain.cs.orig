@@ -29,16 +29,11 @@ namespace ReplicationExcel
         public FrmMain()
         {
             InitializeComponent();
-            RenameReplacer = new RENameReplacer();
         }
         #endregion
         #region Variable
         public ConvertListToFile converter = new ConvertListToFile();
         public ExcelSheetReplicator excelManager = null;
-
-        private RENameReplacer _renameReplacer;
-
-
 
         private string _fileName = "";
         private string _fileExcel = "";
@@ -73,13 +68,6 @@ namespace ReplicationExcel
             get { return _fileSaveName; }
             set { _fileSaveName = value; }
         }
-
-        
-internal RENameReplacer RenameReplacer
-{
-  get { return _renameReplacer; }
-  set { _renameReplacer = value; }
-}
         #endregion
 
         /// <param name="sender"></param>
@@ -161,7 +149,10 @@ internal RENameReplacer RenameReplacer
                         break;
                     }
                 }
+<<<<<<< HEAD:ReplicationExcel/FrmMain.cs
+=======
 
+>>>>>>> petites modifs:ReplicationExcel/Form1.cs
                 if (ajoutEleve)
                 {
                     lsbNames.Items.Add(tbxAddName.Text);
@@ -241,8 +232,12 @@ internal RENameReplacer RenameReplacer
                 listName.Add(lsbNames.Items[i].ToString());
             }
 
+<<<<<<< HEAD:ReplicationExcel/FrmMain.cs
+            bool problemNameOK = true; ;
+=======
             bool problemNameOK = true;
 
+>>>>>>> petites modifs:ReplicationExcel/Form1.cs
             if (listName.Count == 0)
             {
                 DialogResult message = MessageBox.Show("Il n'y a pas de nom a copier pour créer les feuilles. Si vous voulez continuer (le fichier sera créer avec seulement le template), cliquez sur suivant", "Pas de noms", MessageBoxButtons.OKCancel);
@@ -254,6 +249,11 @@ internal RENameReplacer RenameReplacer
 
             if (problemNameOK)
             {
+<<<<<<< HEAD:ReplicationExcel/FrmMain.cs
+
+
+=======
+>>>>>>> petites modifs:ReplicationExcel/Form1.cs
                 sfdFile.Title = "Enregistrer le fichier modifié";
                 sfdFile.Filter = "excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
                 sfdFile.FileName = "Votre fichier d'enregistrement des feuilles excel modifiée.xlsx";
@@ -282,15 +282,6 @@ internal RENameReplacer RenameReplacer
                     MessageBox.Show("Votre nom de fichier n'est pas accepté. Mauvaise extension ou pas de nom", "Fichier érroné");
                 }
             }
-            List<string> listForPoke = new List<string>();
-             for (int i = 0; i < lsbNames.Items.Count; i++)
-                    {
-               
-                        listForPoke.Add(lsbNames.Items[i].ToString());
-                
-                    }
-             this.RenameReplacer.raplacespokemons(listForPoke);
-            
         }
 
         /// <summary>
@@ -381,7 +372,7 @@ internal RENameReplacer RenameReplacer
         private void btnBrowseNomsEleves_Click(object sender, EventArgs e)
         {
             opdFiles.Title = "Charger le fichier texte de nom des élèves";
-            opdFiles.Filter = "fiche Excel (*.xls)|*.xls|txt files (*.txt)|*.txt|All fils (*.*)|*.*";
+            opdFiles.Filter = "fiche Excel (*.xlsx)|*.xlsx|txt files (*.txt)|*.txt|All fils (*.*)|*.*";
             opdFiles.FileName = "Nom de la liste ";
             opdFiles.AddExtension = true;
             opdFiles.DefaultExt = "txt";
@@ -392,7 +383,10 @@ internal RENameReplacer RenameReplacer
             string[] tableauSeparationPoint = this.FileName.Split('.');
             string ext = tableauSeparationPoint[tableauSeparationPoint.Count() - 1].Trim();
 
+<<<<<<< HEAD:ReplicationExcel/FrmMain.cs
             #region Fichier TXT
+=======
+>>>>>>> petites modifs:ReplicationExcel/Form1.cs
             if (this.FileName != "Votre fichier.txt" && this.FileName != "" && ext == "txt")
             {
                 btnSaveName.Enabled = true;
@@ -416,7 +410,7 @@ internal RENameReplacer RenameReplacer
 
             // pas encore fonctionnel 
             // donner rentrer enbrute en Student
-            else if (this.FileName != "*.xls" && this.FileName != "" && ext == "xls")
+            else if (this.FileName != "*.xlsx" && this.FileName != "" && ext == "xlsx")
             {
                 btnSaveName.Enabled = true;
                 lsbNames.Items.Clear();
@@ -474,8 +468,12 @@ internal RENameReplacer RenameReplacer
             if (this.FileExcel != "Votre fichier.xlxs" && this.FileExcel != "" && ext == "xlsx")
             {
                 tbxExcelFile.Text = this.FileExcel;
-                
-                
+<<<<<<< HEAD:ReplicationExcel/FrmMain.cs
+
+
+
+=======
+>>>>>>> petites modifs:ReplicationExcel/Form1.cs
             }
             else
             {

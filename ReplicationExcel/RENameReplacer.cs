@@ -36,9 +36,9 @@ namespace ReplicationExcel
             Excel.Range firstFind = null;
 
 
-            Excel.Range places = Sheet.get_Range("A1","T100");
+            Excel.Range places = Sheet.get_Range("B7","B14");
 
-            currentFind = places.Find("pokemon", "B2", Excel.XlFindLookIn.xlValues);
+            currentFind = places.Find("pokemon", "B8", Excel.XlFindLookIn.xlValues);
 
 
             while (currentFind != null)
